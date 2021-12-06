@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>family</title>
+    <style>
+        body {
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 1.2rem;
+            margin: 0;
+            padding: 0;
+        }
+        .family-box {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, 25%);
+            text-align: left;
+            margin: 70px 0;
+        }
+        .family-box > * {
+            width: 110px;
+        }
+        .family {
+            text-align: center;
+            background-color: antiquewhite;
+        }
+        h3 {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="family">
+    <h3>Family</h3>
+    <div class="family-box">
+        <span>Father<p class="father"></p></span>
+        <span>Mom <p class="mom"></p></span>
+        <span>Boy <p class="Child_one"></p></span>
+        <span>Girl <p class="Child_two"></p></span>
+    </div>
+</div>
+    <script>
+        "use strict";
+        let box_father = document.querySelector('.father'),
+            box_mom = document.querySelector('.mom'),
+            box_childOne = document.querySelector('.Child_one'),
+            box_childTwo = document.querySelector('.Child_two'),
+            family = {
+            father: 'Jon',
+            mom: "Juli",
+            age_father: 26,
+            age_mom: 23,
+            firstName: 'Timbar',
+            children: {
+                Child_one: {
+                    name: "Tom",
+                    age: 11,
+                    hobby: ["TV","PC"]
+                },
+                Child_two: {
+                    name: 'Kristy',
+                    age: 7,
+                    hobby: ["Painting"]
+                }
+            }
+        }
+        box_father.innerHTML = 'Name: '+family.father +' age: '+ family.age_father;
+        box_mom.innerHTML = 'Name: ' + family.mom + ' age: ' + family.age_mom;
+        box_childOne.innerHTML = "Name: "+family.children.Child_one.name+' age: ' + family.children.Child_one.age
+        box_childTwo.innerHTML = "Name: "+family.children.Child_two.name+' age: ' + family.children.Child_two.age
+        class Person {
+            constructor(family) {
+                this.family = family;
+            }
+        };
+        let Checker = new Person(family);
+        console.log(Checker);
+    </script>
+</body>
+</html>
